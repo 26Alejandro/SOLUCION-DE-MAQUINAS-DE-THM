@@ -222,7 +222,21 @@ THM{ba87e0dfe5903adfa6b8b450ad7567bafde87}
 
 ## 6. 🗄️ Bonus — Acceso a la base de datos (MariaDB)
 
-Con acceso root, entramos a la base de datos del sitio web para obtener las credenciales del admin:
+### Detectamos el servicio MySQL corriendo
+
+Una vez dentro del sistema, verificamos si había algún servicio de base de datos activo:
+
+```bash
+ps aux | grep mysql
+```
+
+```
+mysql    788  0.1  4.0 1731496 80784 ?  Ssl  22:16  0:00 /usr/sbin/mysqld
+```
+
+✅ Confirmamos que **mysqld está corriendo** como servicio activo. Con acceso root podemos conectarnos directamente sin credenciales.
+
+### Accedemos a la base de datos:
 
 ```bash
 mysql
